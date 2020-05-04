@@ -24,7 +24,7 @@ public:
 
 	TrenDePersoane& operator=(const TrenDePersoane&);
 	bool operator==(const TrenDePersoane&);
-	
+
 	string toStringDelimiter(string);
 
 	CompanieFeroviara* clone();

@@ -8,7 +8,7 @@ TrenDePersoane::TrenDePersoane() : CompanieFeroviara() {
 	nr_garnituri_disponibile = 0;
 	nr_garnituri_rezervate = 0;
 }
-//conctructor general cu param
+//conctructor general cu parametri
 TrenDePersoane::TrenDePersoane(string nume_model, string nume_producator, int nr_vagoane, int nr_locuri, int nr_garnituri_disponibile, int nr_garnituri_rezervate) :
 	CompanieFeroviara(nume_model, nume_producator, nr_vagoane) {
 	this->nr_locuri = nr_locuri;
@@ -41,6 +41,7 @@ void TrenDePersoane::set_nr_garnituri_disponibile(int new_nr_garnituri_disponibi
 void TrenDePersoane::set_nr_garnituri_rezervate(int new_nr_garnituri_rezervate) {
 	this->nr_garnituri_rezervate = new_nr_garnituri_rezervate;
 }
+//operator =
 TrenDePersoane& TrenDePersoane::operator=(const TrenDePersoane& tren_persoane)
 {
 	CompanieFeroviara::operator=(tren_persoane);
@@ -51,15 +52,17 @@ TrenDePersoane& TrenDePersoane::operator=(const TrenDePersoane& tren_persoane)
 }
 //operator ==
 bool TrenDePersoane::operator==(const TrenDePersoane& tren_persoane)
-{return CompanieFeroviara::operator==(tren_persoane) and (this->nr_locuri == tren_persoane.nr_locuri)
-and (this->nr_garnituri_disponibile == tren_persoane.nr_garnituri_disponibile) and (this->nr_garnituri_rezervate == tren_persoane.nr_garnituri_rezervate);
-	
+{
+	return CompanieFeroviara::operator==(tren_persoane) and (this->nr_locuri == tren_persoane.nr_locuri)
+		and (this->nr_garnituri_disponibile == tren_persoane.nr_garnituri_disponibile) and (this->nr_garnituri_rezervate == tren_persoane.nr_garnituri_rezervate);
+
 }
 
 string TrenDePersoane::toStringDelimiter(string delim)
 {
-	return "TrenP"+delim+ CompanieFeroviara::toStringDelimiter(delim)+ delim + to_string(nr_locuri) + delim + to_string(nr_garnituri_disponibile) + delim + to_string(nr_garnituri_rezervate);
+	return "TrenP" + delim + CompanieFeroviara::toStringDelimiter(delim) + delim + to_string(nr_locuri) + delim + to_string(nr_garnituri_disponibile) + delim + to_string(nr_garnituri_rezervate);
 }
+//clone
 CompanieFeroviara* TrenDePersoane::clone() {
 	return new TrenDePersoane(this->nume_model, this->nume_producator, this->nr_vagoane, this->nr_locuri, this->nr_garnituri_disponibile, this->nr_garnituri_rezervate);
 }

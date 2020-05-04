@@ -30,6 +30,6 @@ public:
 	bool operator==(const CompanieFeroviara&);
 
 	virtual string toStringDelimiter(string delim);
-	
+
 };
 #endif 

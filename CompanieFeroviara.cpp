@@ -6,7 +6,7 @@ using namespace std;
 CompanieFeroviara::CompanieFeroviara() {
 	this->nr_vagoane = 0;
 }
-//constructor cu parametri
+//constructor general cu parametri
 CompanieFeroviara::CompanieFeroviara(string nume_model, string nume_producator, int nr_vagoane) {
 	this->nume_model = nume_model;
 	this->nume_producator = nume_producator;
@@ -38,6 +38,7 @@ void CompanieFeroviara::set_nume_producator(string new_nume_producator) {
 void CompanieFeroviara::set_nr_vagoane(int new_nr_vagoane) {
 	this->nr_vagoane = new_nr_vagoane;
 }
+//operator =
 CompanieFeroviara& CompanieFeroviara::operator=(const CompanieFeroviara& comp_fer)
 {
 	this->nume_model = comp_fer.nume_model;

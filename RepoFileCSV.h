@@ -3,9 +3,10 @@
 
 class RepoFileCSV : public RepoFile {
 public:
-	RepoFileCSV();
-	RepoFileCSV(string fileName);
-	~RepoFileCSV();
+	RepoFileCSV(); //contructor implicit
+	RepoFileCSV(string fileName); //constructor general cu parametri
+	~RepoFileCSV(); //destructor
+
 	void loadFromFile();
 	void saveToFile();
 };

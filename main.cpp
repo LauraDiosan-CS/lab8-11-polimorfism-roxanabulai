@@ -1,29 +1,40 @@
-#include<iostream>
-#include "Tests_CompanieFeroviara.h"
-#include "Tests_TrenDePersoane.h"
-#include "Tests_TrenDeMarfa.h"
-#include "TestRepoFile.h"
+#include <iostream>
+#include <Windows.h>
+#include "TestsCompanieFeroviara.h"
+#include "TestsTrenDeMarfa.h"
+#include "TestsTrenDePersoane.h"
+#include "TestsRepoFile.h"
+#include "Teste_live.h"
 using namespace std;
-int main()
-{
+int main() {
+	/*HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(h, FOREGROUND_GREEN);
+
+	cout<<"  Testele pentru clasa COMPANIE FEROVIARA: ";
 	TestCompanieFeroviara teste_companie_feroviara;
 	teste_companie_feroviara.testAll();
-	cout << "Teste ptr clasa CompanieFeroviara: SUCCES";
-	cout << endl;
+	cout << "au trecut cu succes!" << endl;
+
+	cout <<"  Testele pentru clasa TREN DE MARFA     : ";
 	TestTrenDeMarfa teste_tren_marfa;
 	teste_tren_marfa.testAll();
-	cout << "Teste ptr clasa TrenDeMarfa: SUCCES";
-	cout << endl;
+	cout << "au trecut cu succes!" << endl;
+
+	cout <<"  Testele pentru clasa TREN DE PERSOANE  : ";
 	TestTrenDePersoane teste_tren_persoane;
 	teste_tren_persoane.testAll();
-	cout << "Teste ptr clasa TrenDePersoane: SUCCES";
-	cout << endl;
+	cout << "au trecut cu succes!" << endl;
+
+	cout <<"  Testele pentru Repo                    : ";
 	TestRepoFile teste_repo;
 	teste_repo.testAll();
-	cout << "Teste ptr RepoFile: SUCCES";
-	cout << endl;
-	cout << "Gata!";
-	
-	return 0;
+	cout << "au trecut cu succes!" << endl;
 
+	SetConsoleTextAttribute(h, FOREGROUND_INTENSITY);
+	cout << endl;
+	cout <<"GATAAA TEMA PTR LAB 10!!!" << endl;
+	*/
+	teste_live();
+	cout << "gataa";
+	return 0;
 }

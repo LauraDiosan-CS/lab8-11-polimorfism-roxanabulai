@@ -2,14 +2,15 @@
 #include "TrenDeMarfa.h"
 #include "TrenDePersoane.h"
 #include <fstream>
-RepoFileTXT::RepoFileTXT(): RepoFile()
+//constructor implicit
+RepoFileTXT::RepoFileTXT() : RepoFile()
 {
 }
-
-RepoFileTXT::RepoFileTXT(string fileName): RepoFile(fileName)
+//constructor general cu parametri
+RepoFileTXT::RepoFileTXT(string fileName) : RepoFile(fileName)
 {
 }
-
+//destructor
 RepoFileTXT::~RepoFileTXT() {
 
 }
@@ -40,7 +41,7 @@ void RepoFileTXT::loadFromFile() {
 				linie = linie.erase(0, pos + 1);
 
 				pos = linie.find(delim);
-				int marfa = stoi(linie.substr(0, pos));
+				string marfa = linie.substr(0, pos);
 				linie = linie.erase(0, pos + 1);
 
 				pos = linie.find(delim);
@@ -50,7 +51,7 @@ void RepoFileTXT::loadFromFile() {
 				pos = linie.find(delim);
 				int nr_garnituri_rezervate = stoi(linie.substr(0, pos));
 
-				TrenDeMarfa* tren_marfa = new TrenDeMarfa(nume_model, nume_producator, nr_vagoane, marfa, nr_garnituri_disponibile, nr_garnituri_rezervate); 
+				TrenDeMarfa* tren_marfa = new TrenDeMarfa(nume_model, nume_producator, nr_vagoane, marfa, nr_garnituri_disponibile, nr_garnituri_rezervate);
 				this->trenuri.push_back(tren_marfa);
 			}
 			else if (linie.substr(0, 5) == "TrenP")
