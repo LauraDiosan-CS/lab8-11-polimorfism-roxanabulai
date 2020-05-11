@@ -11,10 +11,6 @@ private:
 	void testSetNumeProducator();
 	void testGetNrVagoane();
 	void testSetNrVagoane();
-	void testGetNrGarnituriDisponibile();
-	void testSetNrGarnituriDisponibile();
-	void testGetNrGarnituriRezervate();
-	void testSetNrGarnituriRezervate();
 	void testAssignmentOperator();
 	void testEqualityOperator();
 	void testToStringDelimiter();

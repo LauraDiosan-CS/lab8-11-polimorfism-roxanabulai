@@ -1,2 +1,0 @@
-TrenM a b 10 carbuni 12 13
-

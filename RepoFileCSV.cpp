@@ -52,7 +52,7 @@ void RepoFileCSV::loadFromFile() {
 				int nr_garnituri_rezervate = stoi(linie.substr(0, pos));
 
 				TrenDeMarfa* tren_marfa = new TrenDeMarfa(nume_model, nume_producator, nr_vagoane, marfa, nr_garnituri_disponibile, nr_garnituri_rezervate);
-				this->addTren(tren_marfa);
+				this->addCompanieFeroviara(tren_marfa);
 			}
 			else if (linie.substr(0, 5) == "TrenP")
 			{
@@ -82,7 +82,7 @@ void RepoFileCSV::loadFromFile() {
 				int nr_garnituri_rezervate = stoi(linie.substr(0, pos));
 
 				TrenDePersoane* tren_persoane = new TrenDePersoane(nume_model, nume_producator, nr_vagoane, nr_locuri, nr_garnituri_disponibile, nr_garnituri_rezervate);
-				this->addTren(tren_persoane);
+				this->addCompanieFeroviara(tren_persoane);
 			}
 		}
 		f.close();

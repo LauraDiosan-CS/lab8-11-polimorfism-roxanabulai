@@ -7,6 +7,10 @@ private:
 	void testClone();
 	void testGetMarfa();
 	void testSetMarfa();
+	void testGetNrGarnituriDisponibile();
+	void testSetNrGarnituriDisponibile();
+	void testGetNrGarnituriRezervate();
+	void testSetNrGarnituriRezervate();
 	void testAssignmentOperator();
 	void testEqualityOperator();
 	void testToStringDelimiter();

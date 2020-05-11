@@ -1,7 +1,6 @@
 #pragma once
 #include "CompanieFeroviara.h"
 #include <vector>
-
 class RepoFile {
 protected:
 	vector<CompanieFeroviara*> trenuri; //punem * ptr polimorfism
@@ -17,16 +16,13 @@ public:
 
 	vector<CompanieFeroviara*> getAll();
 	int getSize();
-	CompanieFeroviara* getTren(int pos);
-	void addTren(CompanieFeroviara* p);
-	void updateTren(CompanieFeroviara* trenVechi, CompanieFeroviara* trenNou);
-	void deleteTren(CompanieFeroviara* tren);
+	CompanieFeroviara* getCompanieFeroviara(int pos);
+	void addCompanieFeroviara(CompanieFeroviara* p);
+	void updateCompanieFeroviara(CompanieFeroviara* trenVechi, CompanieFeroviara* trenNou);
+	void deleteCompanieFeroviara(CompanieFeroviara* tren);
 
 	virtual void loadFromFile() = 0;
 	virtual void saveToFile() = 0;
-
-	//virtual void getAll_garnituri_marfa() = 0;
-	//virtual void getAll_garnituri_persoane() = 0;
 };
 
 //folosim polimorfism de 2 ori
