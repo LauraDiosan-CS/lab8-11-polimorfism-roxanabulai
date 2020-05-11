@@ -1,4 +1,5 @@
 #pragma once
+#pragma once
 #include "RepoFile.h"
 #include "RepoFileTXT.h"
 #include "RepoFileCSV.h"
@@ -15,10 +16,10 @@ private:
 
     void testGetSize();
     void testGetAll();
-    void testGetCompanieFeroviara();
-    void testAddCompanieFeroviara();
-    void testUpdateCompanieFeroviara();
-    void testDeleteCompanieFeroviara();
+    void testGetTren();
+    void testAddTren();
+    void testUpdateTren();
+    void testDeleteTren();
 
     void testLoadFromFileTXT();
     void testLoadFromFileCSV();
@@ -28,5 +29,4 @@ public:
     TestRepoFile();
     ~TestRepoFile();
     void testAll();
-    void teste_live();
 };

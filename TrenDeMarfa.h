@@ -1,25 +1,22 @@
 #pragma once
 #include "CompanieFeroviara.h"
+#include <string>
 
 class TrenDeMarfa : public CompanieFeroviara {
 private:
 	string marfa;
-	int nr_garnituri_disponibile;
-	int nr_garnituri_rezervate;
+
 public:
 	TrenDeMarfa();//constructor implicit
 	TrenDeMarfa(string, string, int, string, int, int);//constructor general cu parametri
 	TrenDeMarfa(const TrenDeMarfa&);//constructor de copiere
 	~TrenDeMarfa(); //destructor
 
-	//getteri
+	//get
 	string get_marfa();
-	int get_nr_garnituri_disponibile();
-	int get_nr_garnituri_rezervate();
-	//setteri
+
+	//set
 	void set_marfa(string);
-	void set_nr_garnituri_disponibile(int);
-	void set_nr_garnituri_rezervate(int);
 
 	TrenDeMarfa& operator=(const TrenDeMarfa&);
 	bool operator==(const TrenDeMarfa&);
