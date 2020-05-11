@@ -1,0 +1,4 @@
+TrenM ABCD15 DDD 200  60 140
+TrenM ABC245T CCC 180  80 100
+TrenM ABC2345T AAA 150 carbuni 50 100
+TrenM a a 1 carbuni 2 2

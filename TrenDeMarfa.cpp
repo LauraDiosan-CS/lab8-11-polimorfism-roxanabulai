@@ -4,49 +4,30 @@
 
 //constructor implicit
 TrenDeMarfa::TrenDeMarfa() : CompanieFeroviara() {
-	nr_garnituri_disponibile = 0;
-	nr_garnituri_rezervate = 0;
 }
 //conctructor general cu parametri
 TrenDeMarfa::TrenDeMarfa(string nume_model, string nume_producator, int nr_vagoane, string marfa, int nr_garnituri_disponibile, int nr_garnituri_rezervate) :
-	CompanieFeroviara(nume_model, nume_producator, nr_vagoane) {
+	CompanieFeroviara(nume_model, nume_producator, nr_vagoane, nr_garnituri_disponibile, nr_garnituri_rezervate) {
 	this->marfa = marfa;
-	this->nr_garnituri_disponibile = nr_garnituri_disponibile;
-	this->nr_garnituri_rezervate = nr_garnituri_rezervate;
 }
 //constructor de copiere
-TrenDeMarfa::TrenDeMarfa(const TrenDeMarfa& tren_marfa) :CompanieFeroviara(tren_marfa) {
+TrenDeMarfa::TrenDeMarfa(const TrenDeMarfa& tren_marfa) : CompanieFeroviara(tren_marfa) {
 	this->marfa = tren_marfa.marfa;
-	this->nr_garnituri_disponibile = tren_marfa.nr_garnituri_disponibile;
-	this->nr_garnituri_rezervate = tren_marfa.nr_garnituri_rezervate;
 }
-//getteri
+//get
 string TrenDeMarfa::get_marfa() {
 	return this->marfa;
 }
-int TrenDeMarfa::get_nr_garnituri_disponibile() {
-	return this->nr_garnituri_disponibile;
-}
-int TrenDeMarfa::get_nr_garnituri_rezervate() {
-	return this->nr_garnituri_rezervate;
-}
-//setteri
+//set
 void TrenDeMarfa::set_marfa(string new_marfa) {
 	this->marfa = new_marfa;
 }
-void TrenDeMarfa::set_nr_garnituri_disponibile(int new_nr_garnituri_disponibile) {
-	this->nr_garnituri_disponibile = new_nr_garnituri_disponibile;
-}
-void TrenDeMarfa::set_nr_garnituri_rezervate(int new_nr_garnituri_rezervate) {
-	this->nr_garnituri_rezervate = new_nr_garnituri_rezervate;
-}
+
 //operator =
 TrenDeMarfa& TrenDeMarfa::operator=(const TrenDeMarfa& tren_marfa)
 {
 	CompanieFeroviara::operator=(tren_marfa);
 	this->marfa = tren_marfa.marfa;
-	this->nr_garnituri_disponibile = tren_marfa.nr_garnituri_disponibile;
-	this->nr_garnituri_rezervate = tren_marfa.nr_garnituri_rezervate;
 	return *this;
 }
 //clone
@@ -57,13 +38,15 @@ CompanieFeroviara* TrenDeMarfa::clone()
 //operator ==
 bool TrenDeMarfa::operator==(const TrenDeMarfa& tren_marfa)
 {
-	return CompanieFeroviara::operator==(tren_marfa) and (this->marfa == tren_marfa.marfa) and (this->nr_garnituri_disponibile == tren_marfa.nr_garnituri_disponibile) and (this->nr_garnituri_rezervate == tren_marfa.nr_garnituri_rezervate);
+	return CompanieFeroviara::operator==(tren_marfa) and (this->marfa == tren_marfa.marfa);
 }
 
 string TrenDeMarfa::toStringDelimiter(string delim)
 {
-	return "TrenM" + delim + CompanieFeroviara::toStringDelimiter(delim) + delim + marfa + delim + to_string(nr_garnituri_disponibile) + delim + to_string(nr_garnituri_rezervate);
+	return "TrenM" + delim + this->nume_model + delim + this->nume_producator + delim + to_string(this->nr_vagoane) + delim + this->marfa + delim +
+		to_string(this->nr_garnituri_disponibile) + delim + to_string(this->nr_garnituri_rezervate);
 }
+
 
 //destructor
 TrenDeMarfa::~TrenDeMarfa() {
